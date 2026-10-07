@@ -1,7 +1,8 @@
 extends CharacterBody2D
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var player = $"../player"
-@onready var win_label = $"../Camera2D/win2"
+@onready var win = $"../Camera2D/win2"
+@onready var hearts = $"../UI/HeartContainer"
 var bullet_scene1 = preload("res://CharacterBody2D/boss/bullet1_boss.tscn")
 var bullet_scene2 = preload("res://CharacterBody2D/boss/bullet2_boss.tscn")
 var bullet_scene3 = preload("res://CharacterBody2D/boss/bullet3_boss.tscn")
@@ -22,7 +23,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if health == 0:
 		queue_free()
-		win_label.visible = true
+		win.visible = true
+		hearts.visible = false
 
 
 

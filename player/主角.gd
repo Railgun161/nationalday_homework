@@ -4,7 +4,7 @@ var jump_count:int = 0
 @onready var sprite = $Sprite2D
 @export var max_health: int = 3
 var health: int
-@onready var shibai_label = $"../Camera2D/lose"
+@onready var win = $"../Camera2D/win2"
 var bullet_scene = preload("res://player/bullet_player.tscn")
 @onready var shoot_cooldown = 0
 @onready var gogogo_cooldown = 0
@@ -39,7 +39,6 @@ func _physics_process(delta: float) -> void:
 	else :      #跳跃
 		jump_count = 0
 		velocity.y = 0
-	#var target_speed = 300
 	velocity.x = Input.get_axis('left', 'right') * 300     #左右移动
 	if Input.is_action_pressed("sprint") and enermies.is_empty():         #加速 Shift
 		velocity.x *= 1.5
@@ -60,6 +59,8 @@ func _physics_process(delta: float) -> void:
 		get_tree().current_scene.add_child(bullet)
 		shoot_cooldown = 1
 	move_and_slide()
+	if win.visible == true:
+		health = 3
 
 func _process(delta: float) -> void:
 	var enermies = get_tree().get_nodes_in_group('mob')

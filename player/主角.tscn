@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dpif52xrr28wq"]
+
+[ext_resource type="Script" uid="uid://b4m2o4f7oggxd" path="res://player/主角.gd" id="1_rennr"]
+[ext_resource type="Texture2D" uid="uid://cgkn1cd8uhunb" path="res://assets/game/characters/player_green_idle.png" id="2_rennr"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k73cj"]
+radius = 27.0
+height = 64.0
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=532040324 groups=["player"]]
+collision_layer = 2
+script = ExtResource("1_rennr")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2075257366 groups=["player"]]
+texture_filter = 1
+position = Vector2(9.536743e-07, 0)
+scale = Vector2(-2.7, 2.7)
+texture = ExtResource("2_rennr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1318343583 groups=["player"]]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_k73cj")

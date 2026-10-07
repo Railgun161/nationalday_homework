@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://b1un381f2nty"]
+
+[ext_resource type="Script" uid="uid://bo13ifdqiikm" path="res://CharacterBody2D/boss/bullet2_boss.gd" id="1_tcwkq"]
+[ext_resource type="Texture2D" uid="uid://dr1eaigepwqi6" path="res://CharacterBody2D/circle.png" id="2_dfret"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4futt"]
+
+[node name="bullet" type="Area2D" unique_id=1482572820]
+collision_mask = 3
+script = ExtResource("1_tcwkq")
+
+[node name="Circle" type="Sprite2D" parent="." unique_id=1956335621]
+modulate = Color(0.95686275, 0.7058824, 0.105882354, 1)
+scale = Vector2(0.15999998, 0.15999998)
+texture = ExtResource("2_dfret")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=100879529]
+shape = SubResource("CircleShape2D_4futt")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

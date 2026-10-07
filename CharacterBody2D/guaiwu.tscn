@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://oa1vbk5pf3aa"]
+
+[ext_resource type="Texture2D" uid="uid://cqn00canu8ty0" path="res://assets/kenney/characters/tile_0004.png" id="1_j4bpi"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ta5nu"]
+radius = 27.0
+height = 64.0
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=2140431148 groups=["mob"]]
+collision_layer = 10
+collision_mask = 9
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1635334379]
+texture_filter = 1
+scale = Vector2(-2.7, 2.7)
+texture = ExtResource("1_j4bpi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2119345473]
+shape = SubResource("CapsuleShape2D_ta5nu")

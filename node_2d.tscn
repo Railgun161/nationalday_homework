@@ -326,7 +326,7 @@ offset_top = 421.0
 offset_right = 2636.0
 offset_bottom = 470.0
 text = "Shift加速
-Ctrl瞬移"
+L瞬移"
 script = ExtResource("15_ta5nu")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=163533769]
